@@ -202,8 +202,7 @@ print(model_plot)
 # read and clean data
 library(datasets); library(ggplot2); library(GGally); library(dplyr)
 data(mtcars)
-mtcars1 <- mtcars %>% rename(man = am) %>% mutate(man = factor(man)) %>%
-    mutate(cyl = factor(cyl))
+mtcars1 <- mtcars %>% rename(man = am) %>% mutate(man = factor(man)) %>%    mutate(cyl = factor(cyl))
 
 # explore data -------------------
 
@@ -229,8 +228,7 @@ fit6 <- lm(data = mtcars1, mpg ~ cyl + man - 1); summary(fit6)
 anova(fitM, fit6) # difference is significant
 
 fit7 <- lm(data = mtcars1, mpg ~ wt + cyl + man - 1); summary(fit7)
-anova(fit5, fit7) # difference is significant
-anova(fit6, fit7) # difference is significant
+anova(fit5, fit7); anova(fit6, fit7) # differences are significant
 
 fit8 <- lm(data = mtcars1, mpg ~ wt + disp + cyl + man - 1); summary(fit8)
 anova(fit7, fit8) # difference not significant, cyl and disp highly correlated?
@@ -275,3 +273,7 @@ df <- df.residual(fit10)
 error_margin <- standard_error * qt(0.975, df)
 confint <- c(man_mpg_diff - error_margin, man_mpg_diff + error_margin)
 ```
+
+## R markdown file on GitHub
+
+https://github.com/dmodjeska/RegMods_Project/blob/master/project.Rmd
