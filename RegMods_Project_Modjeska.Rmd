@@ -276,4 +276,4 @@ confint <- c(man_mpg_diff - error_margin, man_mpg_diff + error_margin)
 
 ## R markdown file on GitHub
 
-https://github.com/dmodjeska/RegMods_Project/blob/master/project.Rmd
+https://github.com/dmodjeska/RegMods_Project/blob/master/RegMods_Project_Modjeska.Rmd
